@@ -66,7 +66,7 @@ function smart_offensive() {
 function recruit_offensive() {
   var troops = smart_offensive();
   $("#axe_0").val(troops.axes);
-  $("light_0").val(troops.lc);
+  $("#light_0").val(troops.lc);
   $("input[type=submit]").click();
   return false;
 }
