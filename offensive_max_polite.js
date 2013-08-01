@@ -40,7 +40,7 @@ function smart_offensive() {
       if ( lc_cost.iron + axe_cost.iron > budget.iron ) {
           return false;
       }
-      if ( lc_cost.iron + axe_cost.iron > budget.iron ) {
+      if ( lc_cost.pop + axe_cost.pop > budget.pop ) {
           return false;
       }
       return {
