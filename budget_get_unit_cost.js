@@ -1,8 +1,41 @@
+/** ------------------------
+
+  ABSTRACT:
+
+    A low level glue layer to extract troop cost information from the 'recruit' page.
+
+  Usage:
+
+  $.ajaxSetup({ cache: true });
+  $.getScript("http://kentfredric.github.io/js-tw-scripts/budget_get_unit_cost.js", function(){
+      console.log( document.budgeting.get_unit_cost('axe') )
+  });
+  void(0);
+
+  Values:
+
+    The following values of 'unit' are recognised:
+
+      - spear
+      - sword
+      - axe
+      - archer
+      - scout
+      - lc
+      - ma
+      - hc
+      - ram
+      - cat
+
+*/
 if ( !document['budgeting'] ) {
   document['budgeting'] = {};
 }
 
-(function(){ 
+(function(){
+  if ( document['budgeting']['get_unit_cost'] ) {
+    return false;
+  }
   var scrape_map = {
     "Spear fighter": "spear",
     "Swordsman": "sword",
@@ -15,7 +48,7 @@ if ( !document['budgeting'] ) {
     "Ram":"ram",
     "Catapult":"cat"
   };
-  
+
   var format_name = function(value){
     if ( scrape_map[value] ) {
       return scrape_map[value];
@@ -30,7 +63,7 @@ if ( !document['budgeting'] ) {
   var format_time = function(value) {
     var time_parts = String(value).split(/:/);
     return ( Number(time_parts[0]) * 60 )
-                  + Number(time_parts[1]) + 
+                  + Number(time_parts[1]) +
                   ( Number(time_parts[2]) / 60 );
 
   };
@@ -71,12 +104,12 @@ if ( !document['budgeting'] ) {
 
   var unit_costs = get_unit_costs();
 
-  if ( !document['budgeting']['get_unit_cost'] ) {
-    document['budgeting']['get_unit_cost'] = function(unit) {
-      if ( !unit_costs[unit] ) {
-        return false;
-      }
-      return unit_costs[unit];
-    };
-  }
+  document['budgeting']['get_unit_cost'] = function(unit) {
+    if ( !unit_costs[unit] ) {
+      return false;
+    }
+    return unit_costs[unit];
+  };
+
+  return false;
 })();
