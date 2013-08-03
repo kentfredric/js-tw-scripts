@@ -100,6 +100,9 @@ if ( !document['budgeting'] ) {
 
   var get_unit_costs = function() {
     var table = $("form#train_form table.vis");
+    if ( !table.length ){
+      alert("Error: budget_get_unit_cost.js works *ONLY* on the recruitment page");
+    }
     var intel = {  };
 
     var scrape_row = function(row_id, row ) {
