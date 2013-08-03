@@ -8,11 +8,19 @@
 
   $.ajaxSetup({ cache: true });
   $.getScript("http://kentfredric.github.io/js-tw-scripts/budget_get_unit_cost.js", function(){
-      console.log( document.budgeting.get_unit_cost('axe') )
+    -- call methods here --
   });
   void(0);
 
-  Values:
+*/
+
+
+if ( !document['budgeting'] ) {
+  document['budgeting'] = {};
+}
+
+/**
+  ==  document.budgeting.get_unit_cost( unit ) ==
 
     The following values of 'unit' are recognised:
 
@@ -27,10 +35,11 @@
       - ram
       - cat
 
+    Returns:
+
+      { name: <unitname>, wood: <woodcost>, clay: <claycost>, iron: <ironcost>, pop: <popcost>, time: <timecost in minutes> }
 */
-if ( !document['budgeting'] ) {
-  document['budgeting'] = {};
-}
+
 
 (function(){
   if ( document['budgeting']['get_unit_cost'] ) {
@@ -112,4 +121,36 @@ if ( !document['budgeting'] ) {
   };
 
   return false;
+})();
+/*
+  == document.budgeting.get_unit_cost_times( unit, amount ) ==
+
+  As with `get_unit_cost`, except multiplies costs by amount
+  and returns slightly differently:
+
+    { name: <unitname>, amount: <amount>, cost: {
+        wood: <woodcost>, ... etc.
+    }}
+
+*/
+
+(function(){
+  if ( document['budgeting']['get_unit_cost_times'] ) {
+    return false;
+  }
+  document['budgeting']['get_unit_cost_times'] = function ( unit, number ) {
+    var single = document.budgeting.get_unit_cost(unit);
+    return {
+      name: unit,
+      amount: number,
+      cost: {
+        wood: single.wood * number,
+        clay: single.clay * number,
+        iron: single.iron * number,
+        pop: single.pop * number,
+        time: single.time * number,
+      }
+    };
+  };
+
 })();
