@@ -1,0 +1,57 @@
+# Library
+
+  twx.set_page.js
+
+# Usage
+
+## Loading
+
+```js
+
+$.getScript("http://kentfredric.github.io/js-tw-scripts/lib/twx.set_page.js", function() {
+  /* do things here */
+});
+
+```
+
+## Invocation
+
+```js
+/* set_page( config, callback ) */
+document.twx.set_page({ param_name: "param_value" }, function() {
+  /* your code here */
+});
+
+```
+## Parameters
+
+### `config`
+
+A hash of parameters that should be in the Address of the current page.
+
+ie:
+
+```js
+
+  { screen: 'overview' } /* require  screen=overview */
+
+```
+
+### `callback`
+
+A function to invoke on satisfactory pages.
+
+## On Matching pages
+
+On pages where the parameters specified in `config` are satisfactory, `callback` will
+be invoked without any user interaction.
+
+## On Non Matching pages
+
+On pages that don't match the requirements, users are 
+
+1. Requested to redirect to a page that does satisfy the requirements
+
+2. Asked if they want to execute the script anyway if they opt not to redirect.
+
+
