@@ -57,4 +57,13 @@ On pages that don't match the requirements, users are
 
 2. Asked if they want to execute the script anyway if they opt not to redirect.
 
+## Examples
 
+{% highlight js %}
+$.getScript("http://kentfredric.github.io/js-tw-scripts/lib/twx.set_page.js", function() {
+  document.twx.set_page({ screen: 'overview'}, function() {
+    alert("Congratulations, you're on the overview page. Or are you >_>");
+  });
+});
+
+{% endhighlight %}
