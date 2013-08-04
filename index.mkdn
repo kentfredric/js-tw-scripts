@@ -1,0 +1,8 @@
+---
+layout: basic
+---
+
+### Libraries
+
+* `twx.set_page` [docs]({{site.baseurl}}/lib/twx.set_page.html) [source]({{site.baseurl}}/lib/twx.set_page.js). 
+  Require user to be on a specific tribalwars page to run a script, while preserving important things like which account you're sitting, and which village you're currently looking at. 
