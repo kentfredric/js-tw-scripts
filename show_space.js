@@ -27,20 +27,40 @@ function on_page_overview_villages(callback) {
 
 on_page_overview_villages(function(){ 
   $("table#production_table tr td span.grey").remove();
+  var modes = {
+    basic : { 
+      village: 0,
+      resources: 2,
+      warehouse: 3,
+    },
+    premium : {
+      village: 1,
+      resources: 3,
+      warehouse: 4
+    }
+  };
+  var mode;
+  if ($("table#production_table tr:eq(0) th:eq(2)").text() == "Points" ){
+    mode = modes.premium;
+    //console.log("mode = premium");
+  } else {
+    mode = modes.basic;
+    //console.log("mode = basic");
+  }
   $("table#production_table tr").each(function( index, item ) {
     var tds,name,resources,res_array,space_array,warehouse;
     tds = $("td", item);
-    if ( ! tds[0] ){
+    if ( ! tds[mode.village] ){
         return;
     }
-    if ( ! tds[2] ){
+    if ( ! tds[mode.resources] ){
         return;
     }
-    if ( ! tds[3] ){
+    if ( ! tds[mode.warehouse] ){
         return;
     }
-    name      = $(tds[0]).text().trim();
-    resources = tds[2];
+    name      = $(tds[mode.village]).text().trim();
+    resources = tds[mode.resources];
     space_array = {
         wood: 0,
         stone: 0,
@@ -51,7 +71,8 @@ on_page_overview_villages(function(){
         stone : 0,
         iron : 0
     };
-    warehouse = Number($(tds[3]).text().trim());
+    warehouse = Number($(tds[mode.warehouse]).text().trim());
+    //console.log({ village: name});
     
     $.each(['wood','stone','iron'],function(i,name) {
         var field = $("span." + name, resources);
