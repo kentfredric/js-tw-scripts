@@ -1,0 +1,13 @@
+code {
+  color: green;
+}
+div.highlight {
+  padding: 5px 10px;
+}
+body {
+  padding: 5px 10px;
+  background-color: #DDD;
+}
+html {
+  background-color: #000;
+}
