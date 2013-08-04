@@ -9,23 +9,23 @@ layout: basic
 
 ## Loading
 
-```js
+{% highlight js %}
 
 $.getScript("http://kentfredric.github.io/js-tw-scripts/lib/twx.set_page.js", function() {
   /* do things here */
 });
 
-```
+{% endhighlight %}
 
 ## Invocation
 
-```js
+{% highlight js %}
 /* set_page( config, callback ) */
 document.twx.set_page({ param_name: "param_value" }, function() {
   /* your code here */
 });
 
-```
+{% endhighlight %}
 ## Parameters
 
 ### `config`
@@ -34,11 +34,11 @@ A hash of parameters that should be in the Address of the current page.
 
 ie:
 
-```js
+{% highlight js %}
 
-  { screen: 'overview' } /* require  screen=overview */
+{ screen: 'overview' } /* require  screen=overview */
 
-```
+{% endhighlight %}
 
 ### `callback`
 
