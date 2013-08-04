@@ -6,3 +6,7 @@ layout: basic
 
 * `twx.set_page` [docs]({{site.baseurl}}/lib/twx.set_page.html) [source]({{site.baseurl}}/lib/twx.set_page.js). 
   Require user to be on a specific tribalwars page to run a script, while preserving important things like which account you're sitting, and which village you're currently looking at. 
+
+* `twx.resources` [docs]({{site.baseurl}}/lib/twx.resources.html) [source]({{site.baseurl}}/lib/twx.resources.js).
+  Misc utilities for querying how many of a given resource is available in the current village ( or how much warehouse space is free for that resource )
+
