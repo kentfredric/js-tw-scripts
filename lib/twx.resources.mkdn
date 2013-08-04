@@ -1,0 +1,129 @@
+---
+layout: basic
+---
+# Library
+
+##  `twx.resources.js`
+
+# ABSTRACT
+
+This library contains a collection of utility methods to work out various things about
+the current villages resources.
+
+# Usage
+
+## Loading
+
+{% highlight js %}
+
+$.getScript("http://kentfredric.github.io/js-tw-scripts/lib/twx.resources.js", function() {
+  /* do things here */
+});
+
+{% endhighlight %}
+
+## Invocation
+
+{% highlight js %}
+document.twx.resources.<somemethod>();
+{% endhighlight %}
+
+## Methods
+
+### `clay()`
+
+The amount of clay in the current village
+
+### `wood()`
+
+The amount of wood in the current village
+
+### `iron()`
+
+The amount of iron in the current village
+
+### `pop_limit()`
+
+The maximum population the village can hold.
+
+### `pop_amount()`
+
+The amount of the village population currently occupied
+
+### `warehouse_limit()`
+
+The amount any resource warehouse can maximally contain
+
+### `pop_free()`
+
+The amount of troops you can currently recruit.
+
+### `clay_free()`
+
+The amount of clay you can additionally hold.
+
+### `wood_free()`
+
+The amount of wood you can additionally hold.
+
+### `iron_free()`
+
+The amount of iron you can additionally hold.
+
+### `clay_approx()`
+
+The same as `clay()` except with the last 3 digits converted to `000`
+
+### `wood_approx()`
+
+The same as `wood()` except with the last 3 digits converted to `000`
+
+### `iron_approx()`
+
+The same as `iron()` except with the last 3 digits converted to `000`
+
+### `clay_free_approx()`
+
+The same as `clay_free()` except with the last 3 digits converted to `000`
+
+### `wood_free_approx()`
+
+The same as `wood_free()` except with the last 3 digits converted to `000`
+
+### `iron_free_approx()`
+
+The same as `iron_free()` except with the last 3 digits converted to `000`
+
+### `resources()`
+
+Returns `wood()`, `clay()` and `iron()` in a hash structure.
+
+{% highlight js %}
+{ wood : amt , clay: amt, iron: amt }
+{% endhighlight %}
+
+### `resources_free()`
+
+Returns `wood_free()`, `clay_free()` and `iron_free()` in a hash structure.
+
+{% highlight js %}
+{ wood : amt , clay: amt, iron: amt }
+{% endhighlight %}
+
+### `resources_approx()`
+
+Returns `wood_approx()`, `clay_approx()` and `iron_approx()` in a hash structure.
+
+{% highlight js %}
+{ wood : amt , clay: amt, iron: amt }
+{% endhighlight %}
+
+### `resources_free_approx()`
+
+Returns `wood_free_approx()`, `clay_free_approx()` and `iron_free_approx()` in a hash structure.
+
+{% highlight js %}
+{ wood : amt , clay: amt, iron: amt }
+{% endhighlight %}
+
+
