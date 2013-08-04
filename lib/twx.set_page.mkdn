@@ -3,7 +3,7 @@ layout: basic
 ---
 # Library
 
-  twx.set_page.js
+##  `twx.set_page.js`
 
 # Usage
 
