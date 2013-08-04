@@ -1,3 +1,6 @@
+---
+layout: basic
+---
 # Library
 
   twx.set_page.js
