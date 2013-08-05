@@ -160,7 +160,7 @@ on_page_overview_villages(function(){
         res_array[name] = Number(content);
         space_array[name] = warehouse - res_array[name]
     });
-    tb.print_length(name, 20);
+    tb.print_length(name, 40);
     $.each(['wood','stone','iron'], function(i,name) {
       tb.print(" ");
       var approx = Number.toInteger( Number(space_array[name] / 1000 ) ) * 1000;
