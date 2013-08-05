@@ -44,7 +44,7 @@ storage.delete_matching(function(index,value) {
 
 {% endhighlight %}
 
-## `localarray(key,method = "localStorage"\)`
+## `localarray(key,method = "localStorage")`
 
 Creates an object for storing arrays in `window[method][key]`
 
