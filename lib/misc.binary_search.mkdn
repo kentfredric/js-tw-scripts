@@ -1,0 +1,93 @@
+---
+layout: basic
+---
+# Library
+
+## `misc.binary_search.js`
+
+# ABSTRACT
+
+Optimisitically search for an optimal value between 2 points using a search algorithm
+
+# Usage
+
+## Loading
+
+{% highlight js %}
+
+$.getScript("http://kentfredric.github.io/js-tw-scripts/lib/misc.binary_search.js", function() {
+  /* do things here */
+});
+
+{% endhighlight %}
+
+## Invocation
+
+{% highlight js %}
+/* binary_search(config) */
+document.misc.binary_search({
+  check: function(v) {
+    if ( some_algorithm(v) > some_criteria ) {
+      return document.misc.binary_search.HIGH;
+    }
+    return document.misc.binary_search.LOW;
+  },
+  on_found: function(v) {
+    /* code */
+  },
+});
+{% endhighlight %}
+
+## `config`
+
+### `min_step`
+
+How accurate you wish to be.
+
+{% highlight js %}
+binary_search({ min_step: 1 });
+{% endhighlight %}
+
+### `min`
+
+The bottom search candidate:
+
+{% highlight js %}
+binary_search({ min: 100 });
+{% endhighlight %}
+
+### `max`
+
+The top search candidate:
+
+{% highlight js %}
+binary_search({ max: Number.MAX_VALUE });
+{% endhighlight %}
+
+### `check`
+
+The function to determine low/high status of a given value `v`
+
+{% highlight js %}
+binary_search({ 
+  check: function(v) {
+     /* 
+        return document.misc.binary_search.HIGH if v is too big
+        return document.misc.binary_search.LOW  if v is too small
+      */
+  }
+});
+{% endhighlight %}
+
+
+### `on_found`
+
+The function to call when the best fit is found
+
+{% highlight js %}
+binary_search({ 
+  on_found: function(v) {
+  }
+});
+{% endhighlight %}
+
