@@ -1,0 +1,95 @@
+---
+layout: basic
+---
+# Library
+
+## `misc.localarray.js`
+
+# ABSTRACT
+
+Wrapper around `window.localStorage` and `window.sessionStorage` to smooth over working
+with arrays.
+
+# Usage
+
+## Loading
+
+{% highlight js %}
+
+$.getScript("http://kentfredric.github.io/js-tw-scripts/lib/misc.localarray.js", function() {
+  /* do things here */
+});
+
+{% endhighlight %}
+
+## Invocation
+
+{% highlight js %}
+
+var storage = document.misc.localarray("storage_key");
+    storage = document.misc.localarray("storage_key", "localStorage");   // the same
+    storage = document.misc.localarray("storage_key", "sessionStorage"); // associate with tab/window
+
+storage.set(['some','array','of', 'values' ]);
+console.log( storage.get() ) 
+storage.push("value");
+storage.sort();
+storage.delete_at( 5 ); # Delete the 5th Element.
+storage.delete_matching(function(index,value) {
+  return index == 5; # Delete 5th element
+});
+storage.delete_matching(function(index,value) {
+  return value == 'world; # Delete element == "world"
+});
+
+{% endhighlight %}
+
+## `localarray(key,method = "localStorage"\)`
+
+Creates an object for storing arrays in `window[method][key]`
+
+### `key`
+
+Mandatory: Tells `localarray` where to set/get data from.
+
+### `method`
+
+Optional: Determines the underlying storage mechanism:
+
+* `sessionStorage` - Store in the current tab/window.
+
+* `localStorage` - Associate with `window.domain`
+
+## `localarray(...).set( array )`
+
+Set the contents of the backing store to be the contents of `array`
+
+## `localarray(...).get()`
+
+Fetch the contents from the backing store as an array.
+
+## `localarray(...).push(item)`
+
+push `item` into the backing store.
+
+## `localarray(...).sort()`
+
+sort the backing store.
+
+## `localarray(...).delete_matching(callback);`
+
+Delete itesm from the backing store according to the result of `callback`.
+
+{% highlight js %}
+
+callback = function( index, value ) {
+  if ( want_to_delete_value(value) ) {
+    return true;
+  }
+  return false;
+};
+{% endhighlight %}
+
+## `localarray(...).delete_at(index)`
+
+Delete the item number `index`

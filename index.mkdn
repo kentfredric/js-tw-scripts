@@ -16,4 +16,8 @@ layout: basic
 * `misc.textbox` [docs]({{site.baseurl}}/lib/misc.textbox.html) [source]({{site.baseurl}}/lib/misc.textbox.js).
   A basic text box that tools can print into like a terminal.
 
+* `misc.localarray` [docs]({{site.baseurl}}/lib/misc.localarray.html) [source]({{site.baseurl}}/lib/misc.localarray.js).
+  Work with an array stored in `window.localStorage` or `window.sessionStorage`
+
+
 
