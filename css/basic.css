@@ -1,6 +1,9 @@
 code {
   color: green;
 }
+div.highlight code {
+  color: black;
+}
 div.highlight {
   padding: 5px 10px;
   border-radius: 5px;
