@@ -103,6 +103,7 @@ function smart_offensive() {
 
     var twx = document.twx;
     var budget    = twx.resources.resources();
+    budget.pop    = twx.resources.pop_free();
 
     var lc_in_time = function(t){ return t/( 4+ 10/60 ) };
     var axe_in_time = function(t){ return t/( 2+17/60 ) };
