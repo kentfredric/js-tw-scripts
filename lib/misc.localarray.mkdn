@@ -34,12 +34,12 @@ storage.set(['some','array','of', 'values' ]);
 console.log( storage.get() ) 
 storage.push("value");
 storage.sort();
-storage.delete_at( 5 ); # Delete the 5th Element.
+storage.delete_at( 5 );                         // Delete the 5th Element.
 storage.delete_matching(function(index,value) {
-  return index == 5; # Delete 5th element
+  return index == 5;                            // Delete 5th element
 });
 storage.delete_matching(function(index,value) {
-  return value == 'world; # Delete element == "world"
+  return value == 'world';                      // Delete element == "world"
 });
 
 {% endhighlight %}
