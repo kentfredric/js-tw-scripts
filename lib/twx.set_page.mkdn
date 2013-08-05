@@ -5,6 +5,10 @@ layout: basic
 
 ##  `twx.set_page.js`
 
+# ABSTRACT
+
+Make sure the user is on a certain tribalwars page, by checking for various parameters in the address bar, and redirecting (optionally) if there's not a match
+
 # Usage
 
 ## Loading
