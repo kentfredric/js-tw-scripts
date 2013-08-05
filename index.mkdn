@@ -13,3 +13,7 @@ layout: basic
 * `misc.binary_search` [docs]({{site.baseurl}}/lib/misc.binary_search.html) [source]({{site.baseurl}}/lib/misc.binary_search.js).
   A simple binary search algorithm for finding an optimal value of `x` between two points `a` and `z`
 
+* `misc.textbox` [docs]({{site.baseurl}}/lib/misc.textbox.html) [source]({{site.baseurl}}/lib/misc.textbox.js).
+  A basic text box that tools can print into like a terminal.
+
+

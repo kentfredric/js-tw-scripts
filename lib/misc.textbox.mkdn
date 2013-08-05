@@ -1,0 +1,66 @@
+---
+layout: basic
+---
+# Library
+
+## `misc.textbox.js`
+
+# ABSTRACT
+
+Spawn a textbox on top of everything that can be printed into like a terminal
+
+# Usage
+
+## Loading
+
+{% highlight js %}
+
+$.getScript("http://kentfredric.github.io/js-tw-scripts/lib/misc.textbox.js", function() {
+  /* do things here */
+});
+
+{% endhighlight %}
+
+## Invocation
+
+{% highlight js %}
+
+var tb = document.misc.textbox();
+tb.print("this is a message");
+tb.println();
+tb.print_length("this is a message that will be trimmed to a limit", 10 );
+tb.println();
+tb.print_length_right("This will be right alighed to a given width", 20 );
+tb.println();
+
+{% endhighlight %}
+
+## Creating a textbox
+
+{% highlight js %}
+var tb = document.misc.textbox();
+{% endhighlight %}
+
+If the textbox already exists, this method will simply return a reference to it.
+
+
+## Textbox methods
+
+
+### `print(message)`
+
+Echos the message into the textbox
+
+### `println()`
+
+Emits a linefeed in the textbox
+
+### `print_length( message, length )`
+
+Emits `message` at a fixed length of `length`
+
+### `print_length_right( message, length )`
+
+As with `print_length` except pads on the left side where possible.
+
+
