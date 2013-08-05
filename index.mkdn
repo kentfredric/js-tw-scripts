@@ -10,3 +10,6 @@ layout: basic
 * `twx.resources` [docs]({{site.baseurl}}/lib/twx.resources.html) [source]({{site.baseurl}}/lib/twx.resources.js).
   Misc utilities for querying how many of a given resource is available in the current village ( or how much warehouse space is free for that resource )
 
+* `misc.binary_search` [docs]({{site.baseurl}}/lib/misc.binary_search.html) [source]({{site.baseurl}}/lib/misc.binary_search.js).
+  A simple binary search algorithm for finding an optimal value of `x` between two points `a` and `z`
+
