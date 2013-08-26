@@ -6,6 +6,9 @@
     return false;
   }
 
+  var to_int = function(v) {
+    return parseInt(v);
+  };
   var blob = {};
 
   blob.HIGH = 0;
@@ -37,8 +40,8 @@
     var threshold = config.min_step;
 
     while( ( right - left ) > threshold ) {
-      var test_right = Number.toInteger( right - ( ( right - left ) / 2 ) );
-      var test_left  = Number.toInteger( left + (  ( right - left  ) / 2 ) );
+      var test_right = to_int( right - ( ( right - left ) / 2 ) );
+      var test_left  = to_int( left + (  ( right - left  ) / 2 ) );
       if ( config.check(test_right) == blob.HIGH ) {
         right = test_right;
         continue;
@@ -63,7 +66,7 @@
   }
   var res = document.twx.resources = {};
   var trun_k = function(xnumber) {
-    return Number.toInteger( xnumber / 1000 ) * 1000;
+    return to_int( xnumber / 1000 ) * 1000;
   };
 
   res.clay = function() {    return Number( $("#stone").text())   };
@@ -153,9 +156,9 @@ function smart_offensive() {
           return false;
       }
       return {
-        axes: Number.toInteger(axes), 
-        lc  : Number.toInteger(lcs),
-        scouts: Number.toInteger(scouts)
+        axes: to_int(axes), 
+        lc  : to_int(lcs),
+        scouts: to_int(scouts)
       };
   };
 
