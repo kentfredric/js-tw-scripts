@@ -66,6 +66,11 @@
   if ( document.twx['resources'] ) {
     return;
   }
+  var to_int;
+  
+  to_int = function(v) {
+    return parseInt(v);
+  };
   var res = document.twx.resources = {};
   var trun_k = function(xnumber) {
     return to_int( xnumber / 1000 ) * 1000;
