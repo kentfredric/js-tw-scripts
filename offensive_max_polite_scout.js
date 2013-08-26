@@ -110,7 +110,12 @@
 })();
 
 function smart_offensive() {
-
+    var to_int;
+  
+    to_int = function(v) {
+      return parseInt(v);
+    };
+ 
     var twx = document.twx;
     var budget    = twx.resources.resources();
     budget.pop    = twx.resources.pop_free();
