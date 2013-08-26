@@ -6,7 +6,9 @@
     return false;
   }
 
-  var to_int = function(v) {
+  var to_int;
+  
+  to_int = function(v) {
     return parseInt(v);
   };
   var blob = {};
