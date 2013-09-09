@@ -197,7 +197,7 @@ function recruit_offensive() {
   var troops = smart_offensive();
   $("#spear_0").val(troops.spears);
   $("#sword_0").val(troops.swords);
-  $("archer_0").val(troops.archers);
+  $("#archer_0").val(troops.archers);
   $("#heavy_0").val(troops.hc);
   return false;
 }
