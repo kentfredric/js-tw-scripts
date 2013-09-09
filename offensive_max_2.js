@@ -139,8 +139,8 @@ function smart_offensive() {
 
     var can_afford = function(t) {
       var axes = axe_in_time(t);
-      var lcs  = lc_in_time(t * 0.9);
-      var mas  = ma_in_time(t * 0.1);
+      var lcs  = lc_in_time(t * 0.8);
+      var mas  = ma_in_time(t * 0.2);
       var axe_cost = cost_axe(axes);
       var lc_cost  = cost_lc(lcs);
       var ma_cost  = cost_ma(mas);
